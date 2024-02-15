@@ -12,21 +12,98 @@ project layout. It is up to the developer to choose the tools and
 libraries they want to use. There are many extensions provided by the
 community that make adding new functionality easy.
 
+Key features of Flask include:
+====
+Routing: Flask allows you to define routes, which are URLs that the 
+application can handle. You can associate each route with a Python 
+function, making it easy to execute specific code when a user accesses a 
+particular URL.
+
+Templates: Flask uses Jinja2 templates for rendering dynamic content in 
+HTML. This allows you to create dynamic web pages by embedding Python 
+code within your HTML templates.
+
+Web Server Gateway Interface (`WSGI`): Flask is based on the WSGI standard, 
+making it compatible with various web servers. This flexibility allows 
+you to deploy Flask applications in different environments.
+
+Extension Support: Flask follows a minimalist approach but allows you to 
+extend its functionality by using various extensions. These extensions 
+cover a wide range of features, from handling forms to integrating with 
+databases.
+
 .. _WSGI: https://wsgi.readthedocs.io/
 .. _Werkzeug: https://werkzeug.palletsprojects.com/
 .. _Jinja: https://jinja.palletsprojects.com/
 
 
 Installing
-----------
+====
+Python Version
+-----
+We recommend using the latest version of Python. Flask supports Python 3.8 and newer.
 
-Install and update using `pip`_:
+Virtual environments
+-----
+Use a virtual environment to manage the dependencies for your project, both in development and in production.
 
-.. code-block:: text
+What problem does a virtual environment solve? The more Python projects 
+you have, the more likely it is that you need to work with different 
+versions of Python libraries, or even Python itself. Newer versions of 
+libraries for one project can break compatibility in another project.
 
-    $ pip install -U Flask
+Virtual environments are independent groups of Python libraries, one for 
+each project. Packages installed for one project will not affect other 
+projects or the operating system’s packages.
 
-.. _pip: https://pip.pypa.io/en/stable/getting-started/
+Python comes bundled with the `venv`_ module to create virtual environments.
+
+.. _venv: https://docs.python.org/3/library/venv.html#module-venv
+
+Create an environment
+-----
+Create a project folder and a .venv folder within:
+
+For macOS/Linux:
+::
+    $ mkdir myproject
+    $ cd myproject
+    $ python3 -m venv .venv
+
+For Windows: 
+::
+    > mkdir myproject
+    > cd myproject
+    > py -3 -m venv .venv
+
+Activate the environment
+-----
+Before you work on your project, activate the corresponding environment:
+
+For macOS/Linux:
+:: 
+    $ . .venv/bin/activate
+
+For Windows: 
+::
+    > .venv\Scripts\activate
+
+Your shell prompt will change to show the name of the activated environment.
+
+Install Flask
+-----
+Within the activated environment, use the following command to install Flask:
+::
+    $ pip install Flask
+Flask is now installed
+
+.. Install and update using `pip`_:
+
+.. .. code-block:: text
+
+..     $ pip install -U Flask
+
+.. .. _pip: https://pip.pypa.io/en/stable/getting-started/
 
 
 A Simple Example
